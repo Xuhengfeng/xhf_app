@@ -36,6 +36,7 @@ const webpackConfig = {
       'base': resolve('src/components/base'),
       'pages': resolve('src/components/pages'),
       'public': resolve('src/components/public'),
+      'static': resolve('static')
     }
   },
   module: {

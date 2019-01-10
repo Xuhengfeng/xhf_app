@@ -77,8 +77,8 @@ module.exports = {
   cdn: {
     css: ['//at.alicdn.com/t/font_649553_zn4oyb2ign.css'],
     js: [
-      // 'https://cdn.bootcss.com/vue/2.5.21/vue.js',
-      'https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js',
+      'https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js',
+      // 'https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js',
       'https://cdn.jsdelivr.net/npm/vue-router@3.0.1/dist/vue-router.min.js',
       'https://cdn.jsdelivr.net/npm/vuex@3.0.1/dist/vuex.min.js',
       'https://cdn.jsdelivr.net/npm/axios@0.18.0/dist/axios.min.js',

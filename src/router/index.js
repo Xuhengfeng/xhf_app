@@ -4,11 +4,8 @@ import {
 } from '@xuhengfeng/vue-components-app'
 
 // 草稿列表
-const DraftList = () => import('pages/DraftList')
-const DraftListView = () => import('pages/DraftList/children/View')
-const DraftEdit = () => import('pages/DraftList/children/edit')
-const DraftAddPerson = () => import('pages/DraftList/children/add-person')
-const DraftPublishSuccess = () => import('pages/DraftList/children/publish-success')
+const Home = () => import('pages/home')
+const HomeView = () => import('pages/home/children/View')
 
 // 人员选择
 const PersonSelect = () => import('public/PersonSelect')
@@ -17,31 +14,15 @@ const PersonSelect = () => import('public/PersonSelect')
 const TotalRouter = [
   // 草稿列表
   {
-    path: '/DraftList',
-    component: DraftList,
-    name: 'DraftList',
-    redirect: '/DraftList/View',
+    path: '/Home',
+    component: Home,
+    name: 'Home',
+    redirect: '/Home/View',
     children: [{
       path: 'View',
-      component: DraftListView,
-      name: 'DraftListView'
-    },
-    {
-      path: 'Edit',
-      component: DraftEdit,
-      name: 'DraftEdit'
-    },
-    {
-      path: 'AddPerson',
-      component: DraftAddPerson,
-      name: 'DraftAddPerson'
-    },
-    {
-      path: 'PublishSuccess',
-      component: DraftPublishSuccess,
-      name: 'DraftPublishSuccess'
-    }
-    ]
+      component: HomeView,
+      name: 'HomeView'
+    }]
   }
 ]
 

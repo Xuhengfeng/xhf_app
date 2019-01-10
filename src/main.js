@@ -14,7 +14,9 @@ import './mixin' // 全局混入
 import './directives' // 全局指令
 import '@xuhengfeng/styles-app' // 基础样式   其中应用所有到的颜色需从color.less里取,webpack已添加配置,组件中无需单独引入color.less
 import './styles/index.less' // 应用的全局样式
-import './utils/response.js'
+import {
+  rem
+} from '@xuhengfeng/utils-app'
 import {
   Terminal
 } from './utils/index.js'
@@ -35,7 +37,8 @@ import {
   LoadingPlugin,
   ToastPlugin
 } from 'vux'
-Vue.use(Vuex)
+
+rem()
 
 // 判断应用运行平台
 for (var el in Terminal.platform) {
@@ -54,6 +57,7 @@ Vue.use(AlertPlugin)
 Vue.use(ConfirmPlugin)
 Vue.use(LoadingPlugin)
 Vue.use(ToastPlugin)
+Vue.use(Vuex)
 
 // 300ms点击延迟
 FastClick.attach(document.body)
@@ -66,22 +70,20 @@ Vue.prototype.$MeScroll = MeScroll
 
 // 移动端调试工具
 new VConsole()
-
 // 获取用户基本信息
 // store
 //   .dispatch('getUserDetail')
 //   // 1. 用户有默认角色
 //   .then(res => {
 if (process.env.NODE_ENV === 'development') {
-  console.log(11)
   // 1.1 开发环境使用App.vue里配置的全部菜单
   // 默认激活第一个
-  // TotalRouter.push({
-  //   path: '*',
-  //   redirect: TotalRouter[0].redirect
-  // })
+  TotalRouter.push({
+    path: '*',
+    redirect: TotalRouter[0].redirect
+  })
   let router = new Router({
-    routes: TotalRouter.concat(PublicRouter),
+    routes: [...TotalRouter, ...PublicRouter],
     scrollBehavior (to, from, savedPosition) {
       return {
         x: 0,

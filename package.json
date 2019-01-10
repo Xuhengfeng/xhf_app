@@ -15,7 +15,7 @@
     "@lcsoft/styles-app": "^1.1.0",
     "@xuhengfeng/styles-app": "^1.2.2",
     "@xuhengfeng/utils-app": "^1.4.0",
-    "@xuhengfeng/vue-components-app": "^1.4.1",
+    "@xuhengfeng/vue-components-app": "^1.4.7",
     "compression-webpack-plugin": "^1.1.12",
     "fastclick": "^1.0.6",
     "mescroll.js": "^1.4.0",
